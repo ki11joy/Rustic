@@ -1,0 +1,90 @@
+﻿<Window x:Class="Rustic.Views.LoginView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:localization="clr-namespace:Rustic.Localization"
+        xmlns:local="clr-namespace:Rustic.Views"
+        mc:Ignorable="d"
+        Title="{x:Static localization:Strings.LoginView_Title}" 
+        ResizeMode="NoResize"
+        MinWidth="350"
+        WindowStartupLocation="CenterOwner"
+        SizeToContent="WidthAndHeight">
+
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    
+    <Grid
+        Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Label
+            Grid.Row="0"
+            Grid.Column="0"
+            HorizontalAlignment="Right"
+            Content="{x:Static localization:Strings.LoginView_Login}" />
+
+        <TextBox
+            Grid.Row="0"
+            Grid.Column="1"
+            VerticalAlignment="Center"
+            x:Name="Login" />
+
+        <Label
+            Grid.Row="1"
+            Grid.Column="0"
+            HorizontalAlignment="Right"
+            Content="{x:Static localization:Strings.LoginView_Password}" />
+
+        <TextBox
+            Grid.Row="1"
+            Grid.Column="1"
+            VerticalAlignment="Center"
+            x:Name="Password" />
+
+        <CheckBox 
+            Grid.Row="2"
+            Grid.Column="1"
+            x:Name="RememberMe"
+            Content="{x:Static localization:Strings.LoginView_Auto}"/>
+
+        <StackPanel
+            Orientation="Horizontal"
+            Margin="0 10 0 0"
+            HorizontalAlignment="Right"
+            Grid.Row="3"
+            Grid.Column="0"
+            Grid.ColumnSpan="2">
+        
+            <Button 
+                IsDefault="True"
+                x:Name="Ok"
+                Style="{StaticResource CommonButtonStyle}"
+                Content="{x:Static localization:Strings.LoginView_Ok}"/>
+
+            <Button 
+                IsCancel="True"
+                x:Name="Cancel"
+                Margin="10 0 0 0"
+                Style="{StaticResource CommonButtonStyle}"
+                Content="{x:Static localization:Strings.LoginView_Cancel}"/>
+        
+        </StackPanel>
+    </Grid>
+</Window>
